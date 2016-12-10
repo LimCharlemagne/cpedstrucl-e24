@@ -45,7 +45,7 @@ class Stack {
 };
 
 void menu(){
-	cout << "What would you like to do?: \n" << endl;
+	cout << "What Operation would you like to use?\n" << endl;
 	cout << "============================\n" << endl;
 	cout << "1: Push \n";
 	cout << "2: Pop \n";
@@ -60,29 +60,29 @@ int main() {
 	while(1){
 		system("cls");
 		menu();
-		cout<<"\n============\n";
+		cout << "============================\n" << endl;
 		cout<<"Enter choice: ";
 		cin>>choice;
 		switch(choice){
-			case 1:{
-				cout<<"Enter number: ";
-				cin>>a;
-				s -> push(a);
-				break;
-			}
-			case 2:{
-				cout<<"\nSuccesfully removed!";
-				s -> pop();
-				break;
-			}
-			case 3:{
-				s -> display();
-				break;
-			}
-			case 4: exit(1);
-			default: break;
+		case 1:{
+			cout<<"Enter number: ";
+			cin>>a;
+			s -> push(a);
+			break;
 		}
-		getch();
-	}	
-  return 1;
+		case 2:{
+			cout<<"\nSuccesfully removed from stack!~";
+			s -> pop();
+			break;
+		}
+		case 3:{
+			s -> display();
+			break;
+		}
+		case 4: exit(1);
+		default: break;
+	}
+	getch();
+}	
+ return 1;
 }
