@@ -1,7 +1,6 @@
 #include<iostream>
 #include<conio.h>
 using namespace std;
-
 class Stack {
   public:
     Stack(int num) {
@@ -43,20 +42,61 @@ class Stack {
   int top;
   int maxelem;
 };
+    
+class LinkedList{
+    struct Node {
+        int x;
+        Node *next;
+    };
+public:
+    LinkedList(){
+        head = NULL;
+    }
+    
+    int display()
+	{
+    	node = head;
+    	while(node!=NULL)
+    	{
+      	  cout << node->x << " ";
+      	  node = node->next;
+  		}
+  	}
+
+    void addValue(int val){
+        Node *n = new Node();   
+        n->x = val;             
+        n->next = head;         
+                               
+        head = n;              
+    }
+
+    int popValue(){
+        Node *n = head;
+        int ret = n->x;
+
+        head = head->next;
+        delete n;
+        return ret;
+    }
+
+private:
+    Node *head, *node; 
+};
 
 void menu(){
-	cout << "What Operation would you like to use?\n" << endl;
 	cout << "============================\n" << endl;
-	cout << "1: Push \n";
-	cout << "2: Pop \n";
-	cout << "3: Display \n"; 
-	cout << "4: Exit \n";
-	
-}
+	cout << "1: Enter Numbers\n" << endl;
+	cout << "2: Pop \n" << endl;
+	cout << "3: Exit\n" << endl; 
+	cout << "4: Display\n" << endl;
+	}
 
-int main() {
-  Stack * s = new Stack(100);
-	int choice, a;
+int main()
+{
+	int choice, a, num, flag;
+	LinkedList list;
+	Stack * s = new Stack(100);
 	while(1){
 		system("cls");
 		menu();
@@ -65,24 +105,27 @@ int main() {
 		cin>>choice;
 		switch(choice){
 		case 1:{
-			cout<<"Enter number: ";
+			cout<<"Enter into link list: ";
 			cin>>a;
-			s -> push(a);
+			list.addValue(a);
 			break;
 		}
 		case 2:{
-			cout<<"\nSuccesfully removed from stack!~";
-			s -> pop();
+			cout << "\nValue~ " << list.popValue() << " ~Has Successfully Pop" << endl;
 			break;
 		}
-		case 3:{
-			s -> display();
+		case 3: {
+			exit(1);
+			break;
+			}
+		case 4:{
+			cout << "Remaining Link List Value: " << endl;
+			list.display();
+			getch();
 			break;
 		}
-		case 4: exit(1);
-		default: break;
 	}
-	getch();
+
 }	
  return 1;
 }
