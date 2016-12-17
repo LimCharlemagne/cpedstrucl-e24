@@ -111,7 +111,8 @@ int main()
 			break;
 		}
 		case 2:{
-			cout << "\nValue~ " << list.popValue() << " ~Has Successfully Pop" << endl;
+			cout << "\nValue~ " << list.popValue() << " ~Has Successfully Popped" << endl;
+			getch();
 			break;
 		}
 		case 3: {
