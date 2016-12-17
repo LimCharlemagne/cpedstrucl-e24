@@ -119,7 +119,7 @@ int main()
 			break;
 			}
 		case 4:{
-			cout << "Remaining Link List Value: " << endl;
+			cout << "Link List Value: " << endl;
 			list.display();
 			getch();
 			break;
