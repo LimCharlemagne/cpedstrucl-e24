@@ -5,11 +5,12 @@ int main() {
 	int arr[] = {6, 5, 3, 1, 8, 7, 2, 4}, temp[100];
 	int n = 8, i, j, k, l1, l2, h1, h2, size, p = 0;
 	
-	cout << "Array is: \n";
+	cout << "The Given Array is: \n";
 	for(int k = 0; k < n; k++){
-		cout<<arr[k]<<" ";
+		cout << arr[k] << " ";
  	}
- 	cout<<endl<<endl;
+ 	cout << endl;
+ 	cout << endl;
  	for(size = 1; size < n; size = size * 2) {
 		l1 = 0;
 		k = 0;
@@ -43,4 +44,5 @@ int main() {
 		cout << arr[k] << " ";
 		cout << endl;
 	}
+}
 }
